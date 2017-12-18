@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FifaAtome</string>
+    <string name="title">Fifa Atome</string>
+    <string name="slogan">Rappel à ton pote que tu es meilleur que lui à Fifa</string>
 </resources>
