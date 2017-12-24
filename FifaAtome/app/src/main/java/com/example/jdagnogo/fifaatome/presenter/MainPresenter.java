@@ -5,10 +5,8 @@ import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.jdagnogo.fifaatome.Base.BasePresenter;
 import com.example.jdagnogo.fifaatome.FifaAtome;
 import com.example.jdagnogo.fifaatome.models.enums.CircleMenuItemEnum;
-import com.example.jdagnogo.fifaatome.ui.activities.MainActivity;
 import com.example.jdagnogo.fifaatome.ui.views.MainView;
 import com.ramotion.circlemenu.CircleMenuView;
 

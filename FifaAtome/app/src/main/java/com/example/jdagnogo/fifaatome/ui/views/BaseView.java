@@ -1,4 +1,4 @@
-package com.example.jdagnogo.fifaatome.Base;
+package com.example.jdagnogo.fifaatome.ui.views;
 
 import android.app.Activity;
 

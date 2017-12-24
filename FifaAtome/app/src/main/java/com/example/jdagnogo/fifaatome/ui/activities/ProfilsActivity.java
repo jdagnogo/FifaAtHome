@@ -1,14 +1,20 @@
 package com.example.jdagnogo.fifaatome.ui.activities;
 
 import android.app.Activity;
+import android.support.design.widget.FloatingActionButton;
 
-import com.example.jdagnogo.fifaatome.Base.BaseActivity;
-import com.example.jdagnogo.fifaatome.Base.BasePresenter;
+import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.presenter.ProfilsPresenter;
 import com.example.jdagnogo.fifaatome.ui.views.ProfilsView;
 
-public class ProfilsActivity extends BaseActivity implements ProfilsView{
+import butterknife.BindView;
+import butterknife.OnClick;
+
+public class ProfilsActivity extends BaseActivity implements ProfilsView {
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
+    ProfilsPresenter profilsPresenter;
 
     @Override
     protected int getLayoutResourceId() {
@@ -22,11 +28,22 @@ public class ProfilsActivity extends BaseActivity implements ProfilsView{
 
     @Override
     protected BasePresenter setPresenter() {
-        return new ProfilsPresenter();
+        //this is ugly...
+        presenter = new ProfilsPresenter();
+        profilsPresenter = (ProfilsPresenter)presenter;
+        return presenter;
     }
 
     @Override
     public Activity getActivity() {
         return this;
+    }
+
+    /*
+    ButterKnife Click
+     */
+    @OnClick(R.id.fab)
+    void onFabClick() {
+       profilsPresenter.onFabClick();
     }
 }

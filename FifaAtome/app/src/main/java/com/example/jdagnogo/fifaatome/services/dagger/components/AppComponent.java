@@ -1,7 +1,7 @@
 package com.example.jdagnogo.fifaatome.services.dagger.components;
 
 
-import com.example.jdagnogo.fifaatome.Base.BaseActivity;
+import com.example.jdagnogo.fifaatome.ui.activities.BaseActivity;
 import com.example.jdagnogo.fifaatome.services.dagger.modules.AppModule;
 import com.example.jdagnogo.fifaatome.services.dagger.modules.DataModule;
 

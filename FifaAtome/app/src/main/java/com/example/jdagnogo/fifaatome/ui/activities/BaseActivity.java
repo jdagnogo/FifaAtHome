@@ -1,4 +1,4 @@
-package com.example.jdagnogo.fifaatome.Base;
+package com.example.jdagnogo.fifaatome.ui.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,11 +6,13 @@ import android.util.Log;
 
 import com.example.jdagnogo.fifaatome.FifaAtome;
 import com.example.jdagnogo.fifaatome.services.dagger.components.AppComponent;
+import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
+import com.example.jdagnogo.fifaatome.ui.views.BaseView;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseActivity extends Activity implements BaseView{
+public abstract class BaseActivity extends Activity implements BaseView {
     protected Unbinder binder;
     protected BasePresenter presenter;
 
