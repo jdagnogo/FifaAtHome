@@ -13,10 +13,14 @@ import io.realm.RealmConfiguration;
 
 public class FifaAtome extends Application {
     private static final FifaAtome instance = new FifaAtome();
-    private static Context context;
+    public static Context context;
     private static AppComponent appComponent;
 
     public FifaAtome() {
+    }
+
+    public static Context getContext() {
+        return context;
     }
 
     @Override
