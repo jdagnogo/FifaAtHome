@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 buildscript {
     repositories {
         jcenter()
-        maven { url 'https://maven.google.com' }
+
     }
 }
 android {
@@ -15,6 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -23,12 +25,27 @@ android {
         }
     }
 }
-
+repositories {
+    maven {url "https://clojars.org/repo/"}
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:appcompat-v7:26.0.2'
 
-    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    //circleMenu
     compile 'com.ramotion.circlemenu:circle-menu:0.2.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+    //butterknife
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //dagger 2
+    compile 'com.google.dagger:dagger:2.14.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
+
+    //icePick
+   // compile "frankiesardo:icepick:3.2.0"
+    //compile "frankiesardo:icepick-processor:3.2.0"
+    //compile 'org.parceler:parceler:1.1.6'
 }
