@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.example.jdagnogo.fifaatome.FifaAtome;
-import com.example.jdagnogo.fifaatome.services.dagger.components.AppComponent;
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.ui.views.BaseView;
 
@@ -27,7 +26,6 @@ public abstract class BaseActivity extends Activity implements BaseView {
         initPresenter();
         Log.d(BaseActivity.class.getSimpleName(),"---------INIT : butterKnife, presenter ------");
 
-        setupComponent(FifaAtome.getAppComponent());
 
     }
 
@@ -35,10 +33,6 @@ public abstract class BaseActivity extends Activity implements BaseView {
     protected void onResume() {
         super.onResume();
         presenter.onResume();
-    }
-
-    protected void setupComponent(AppComponent appComponent) {
-        appComponent.inject(this);
     }
 
     protected abstract int getLayoutResourceId();

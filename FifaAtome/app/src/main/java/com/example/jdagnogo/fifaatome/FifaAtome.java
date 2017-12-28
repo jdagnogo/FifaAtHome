@@ -3,43 +3,43 @@ package com.example.jdagnogo.fifaatome;
 import android.app.Application;
 import android.content.Context;
 
-import com.example.jdagnogo.fifaatome.services.dagger.components.AppComponent;
-import com.example.jdagnogo.fifaatome.services.dagger.components.DaggerAppComponent;
-import com.example.jdagnogo.fifaatome.services.dagger.modules.AppModule;
-import com.example.jdagnogo.fifaatome.services.dagger.modules.DataModule;
+import com.example.jdagnogo.fifaatome.services.db.DbManager;
+import com.example.jdagnogo.fifaatome.services.db.RealmServiceImpl;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
 public class FifaAtome extends Application {
-    private static final FifaAtome instance = new FifaAtome();
-    public static Context context;
-    private static AppComponent appComponent;
+    public static  FifaAtome instance ;
+    private DbManager dbManager;
+
 
     public FifaAtome() {
     }
 
+    public static DbManager getDbManager() {
+        return instance.dbManager;
+    }
+
+    private static Realm getRealm() {
+        return Realm.getDefaultInstance();
+    }
+
     public static Context getContext() {
-        return context;
+        return instance.getBaseContext();
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        context = this;
-        this.initializeInjector();
+        instance = this;
         initRealmConfiguration();
+        dbManager = new RealmServiceImpl(getRealm());
     }
 
-    private void initializeInjector() {
-        this.appComponent = DaggerAppComponent.builder()
-                .appModule(new AppModule(this))
-                .dataModule(new DataModule())
-                .build();
-    }
 
     private void initRealmConfiguration() {
-        Realm.init(context);
+        Realm.init(getContext());
         RealmConfiguration config = new RealmConfiguration.
                 Builder().
                 deleteRealmIfMigrationNeeded().
@@ -47,7 +47,4 @@ public class FifaAtome extends Application {
         Realm.setDefaultConfiguration(config);
     }
 
-    public static AppComponent getAppComponent() {
-        return appComponent;
-    }
 }
