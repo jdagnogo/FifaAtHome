@@ -1,4 +1,4 @@
-package com.example.jdagnogo.fifaatome.ui.views;
+package com.example.jdagnogo.fifaatome.ui.contract;
 
 import android.graphics.Typeface;
 
@@ -7,7 +7,7 @@ import com.ramotion.circlemenu.CircleMenuView;
 /*
 Stuff specify to MainActivity
  */
-public interface MainView extends BaseView {
+public interface MainContract extends BaseContract {
 
     void initTextFont(Typeface tf);
 

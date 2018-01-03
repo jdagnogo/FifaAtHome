@@ -7,10 +7,10 @@ import android.util.Log;
 
 import com.example.jdagnogo.fifaatome.FifaAtome;
 import com.example.jdagnogo.fifaatome.models.enums.CircleMenuItemEnum;
-import com.example.jdagnogo.fifaatome.ui.views.MainView;
+import com.example.jdagnogo.fifaatome.ui.contract.MainContract;
 import com.ramotion.circlemenu.CircleMenuView;
 
-public class MainPresenter<V extends MainView> implements BasePresenter<V> {
+public class MainPresenter<V extends MainContract> implements BasePresenter<V> {
     private V view;
 
     @Override

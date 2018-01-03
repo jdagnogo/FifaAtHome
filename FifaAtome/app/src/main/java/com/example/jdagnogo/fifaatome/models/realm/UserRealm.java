@@ -1,16 +1,31 @@
-package com.example.jdagnogo.fifaatome.models.entities;
+package com.example.jdagnogo.fifaatome.models.realm;
+
+import com.example.jdagnogo.fifaatome.models.entities.User;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class UserRealm extends RealmObject {
-    @PrimaryKey
+
     private int id;
+    @PrimaryKey
+    private String pseudo;
     private String firstName;
     private String name;
     private String password;
     private String photo;
 
+    public UserRealm() {
+    }
+
+    public UserRealm(User user){
+        this.id = user.getId();
+        this.password = user.getPassword();
+        this.photo = user.getPhoto();
+        this.firstName= user.getFirstName();
+        this.name = user.getName();
+        this.pseudo =user.getPseudo();
+    }
     public String getFullName() {
         return String.format("%s %s",firstName,name);
     }
@@ -53,5 +68,13 @@ public class UserRealm extends RealmObject {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
     }
 }

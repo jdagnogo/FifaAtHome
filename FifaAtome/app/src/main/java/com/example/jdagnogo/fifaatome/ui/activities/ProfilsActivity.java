@@ -2,18 +2,23 @@ package com.example.jdagnogo.fifaatome.ui.activities;
 
 import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.RecyclerView;
 
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.presenter.ProfilsPresenter;
-import com.example.jdagnogo.fifaatome.ui.views.ProfilsView;
+import com.example.jdagnogo.fifaatome.ui.contract.ProfilsContract;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class ProfilsActivity extends BaseActivity implements ProfilsView {
+public class ProfilsActivity extends BaseActivity implements ProfilsContract {
     @BindView(R.id.fab)
     FloatingActionButton floatingActionButton;
+
+    @BindView(R.id.recycler)
+    RecyclerView recyclerView;
+
     ProfilsPresenter profilsPresenter;
 
     @Override
@@ -45,5 +50,10 @@ public class ProfilsActivity extends BaseActivity implements ProfilsView {
     @OnClick(R.id.fab)
     void onFabClick() {
        profilsPresenter.onFabClick();
+    }
+
+    @Override
+    public RecyclerView getRecyclerView() {
+        return recyclerView;
     }
 }

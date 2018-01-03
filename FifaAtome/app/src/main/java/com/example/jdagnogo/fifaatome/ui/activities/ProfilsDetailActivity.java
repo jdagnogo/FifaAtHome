@@ -6,11 +6,11 @@ import android.widget.TextView;
 import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.presenter.ProfilDetailPresenter;
-import com.example.jdagnogo.fifaatome.ui.views.ProfilsDetailView;
+import com.example.jdagnogo.fifaatome.ui.contract.ProfilsDetailContract;
 
 import butterknife.BindView;
 
-public class ProfilsDetailActivity extends BaseActivity implements ProfilsDetailView {
+public class ProfilsDetailActivity extends BaseActivity implements ProfilsDetailContract {
 
     @BindView(R.id.title)
     TextView titleTextView;

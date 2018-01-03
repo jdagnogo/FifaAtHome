@@ -1,13 +1,13 @@
 package com.example.jdagnogo.fifaatome.presenter;
 
 import com.example.jdagnogo.fifaatome.FifaAtome;
-import com.example.jdagnogo.fifaatome.models.entities.UserRealm;
-import com.example.jdagnogo.fifaatome.services.db.DbManager;
-import com.example.jdagnogo.fifaatome.ui.views.ProfilsDetailView;
+import com.example.jdagnogo.fifaatome.models.entities.User;
+import com.example.jdagnogo.fifaatome.models.realm.UserRealm;
+import com.example.jdagnogo.fifaatome.ui.contract.ProfilsDetailContract;
 
 import io.realm.RealmResults;
 
-public class ProfilDetailPresenter<V extends ProfilsDetailView> implements BasePresenter<V> {
+public class ProfilDetailPresenter<V extends ProfilsDetailContract> implements BasePresenter<V> {
 
     UserRealm userRealm;
     private V view;
@@ -19,12 +19,12 @@ public class ProfilDetailPresenter<V extends ProfilsDetailView> implements BaseP
     }
 
     private void loadUserInfo() {
-        /*userRealm = new UserRealm();
+        userRealm = new UserRealm();
         userRealm.setName("TeteDeGland");
         userRealm.setFirstName("Roche");
-        FifaAtome.getDbManager().saveUser(userRealm);*/
+       // FifaAtome.getDbManager().saveUser(new User(userRealm));
 
-        RealmResults<UserRealm> toto = FifaAtome.getDbManager().load();
+
     }
 
 

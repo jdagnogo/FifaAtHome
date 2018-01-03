@@ -24,6 +24,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
 }
 repositories {
     maven {url "https://clojars.org/repo/"}
@@ -35,14 +39,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.0.2'
     //circleMenu
     compile 'com.ramotion.circlemenu:circle-menu:0.2.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     //butterknife
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    //dagger 2
-   //compile 'com.google.dagger:dagger:2.14.1'
-    //annotationProcessor 'com.google.dagger:dagger-compiler:2.14.1'
+    //rxjava 2
+    compile "io.reactivex.rxjava2:rxjava:2.1.8"
 
     //icePick
    // compile "frankiesardo:icepick:3.2.0"

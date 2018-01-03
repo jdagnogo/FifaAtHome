@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.presenter.MainPresenter;
-import com.example.jdagnogo.fifaatome.ui.views.MainView;
+import com.example.jdagnogo.fifaatome.ui.contract.MainContract;
 import com.ramotion.circlemenu.CircleMenuView;
 
 import butterknife.BindView;
@@ -15,7 +15,7 @@ import butterknife.BindView;
 /*
 An Activty is like Jon Snow : they now nothing !
  */
-public class MainActivity extends BaseActivity implements MainView {
+public class MainActivity extends BaseActivity implements MainContract {
 
     @BindView(R.id.title)
     TextView title;

@@ -1,8 +1,8 @@
 package com.example.jdagnogo.fifaatome.presenter;
 
-import com.example.jdagnogo.fifaatome.ui.views.BaseView;
+import com.example.jdagnogo.fifaatome.ui.contract.BaseContract;
 
-public interface BasePresenter<V extends BaseView> {
+public interface BasePresenter<V extends BaseContract> {
 
     void onResume();
 
