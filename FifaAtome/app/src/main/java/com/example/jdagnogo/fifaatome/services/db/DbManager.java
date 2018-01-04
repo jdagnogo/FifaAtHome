@@ -12,10 +12,12 @@ public interface DbManager {
 
     void closeDb();
 
-    void saveUser(User user);
+    Flowable<Boolean> saveUser(User user);
+
+    Flowable<Boolean> saveUsers(ArrayList<User> users);
 
     Flowable<ArrayList<User>>loadUsers();
 
-    void deleteUser(User user);
+    Flowable<Boolean> deleteUser(User user);
 
 }

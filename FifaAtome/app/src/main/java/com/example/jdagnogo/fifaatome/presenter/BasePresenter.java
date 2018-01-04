@@ -6,14 +6,17 @@ public interface BasePresenter<V extends BaseContract> {
 
     void onResume();
 
-    void onDestroy();
+    void onDetach();
 
-    void init(V view);
-    //loading
+    void onAttach(V view);
 
-    //show empty
+    void showLoading();
 
-    //show network error
+    void hideLoading();
+
+    //show empty?
+
+    //show network error?
 
 
 }

@@ -13,8 +13,8 @@
         android:text="@string/title_profil" />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
         android:id="@+id/recycler"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/title">
 
@@ -32,5 +32,43 @@
         android:tint="@android:color/white"
         app:rippleColor="@color/colorAccent" />
 
+    <RelativeLayout
+        android:id="@+id/emptyadapter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginRight="@dimen/default_margin"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="@string/no_user"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24dp" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/no_user" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/loading"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

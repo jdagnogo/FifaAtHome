@@ -30,7 +30,7 @@ public class MainActivity extends BaseActivity implements MainContract {
 
     @Override
     protected void initPresenter() {
-        presenter.init(this);
+        presenter.onAttach(this);
     }
 
     @Override
@@ -51,5 +51,15 @@ public class MainActivity extends BaseActivity implements MainContract {
     @Override
     public Activity getActivity() {
         return this;
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
     }
 }

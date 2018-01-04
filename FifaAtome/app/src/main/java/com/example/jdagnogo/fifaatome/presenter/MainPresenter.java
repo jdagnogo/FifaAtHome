@@ -60,12 +60,22 @@ public class MainPresenter<V extends MainContract> implements BasePresenter<V> {
     }
 
     @Override
-    public void onDestroy() {
+    public void onDetach() {
         this.view = null;
     }
 
     @Override
-    public void init(V view) {
+    public void onAttach(V view) {
         this.view = view;
+    }
+
+    @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
     }
 }

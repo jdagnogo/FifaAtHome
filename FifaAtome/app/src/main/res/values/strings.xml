@@ -3,4 +3,5 @@
     <string name="title">Fifa Atome</string>
     <string name="slogan">Rappel à ton pote que tu es meilleur que lui à Fifa</string>
     <string name="title_profil">Liste des profils</string>
+    <string name="no_user">Aucun profil enregistré pour l\'instant</string>
 </resources>

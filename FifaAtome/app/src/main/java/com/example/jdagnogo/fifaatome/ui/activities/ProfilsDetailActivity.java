@@ -21,13 +21,23 @@ public class ProfilsDetailActivity extends BaseActivity implements ProfilsDetail
     }
 
     @Override
+    public void showLoading() {
+
+    }
+
+    @Override
+    public void hideLoading() {
+
+    }
+
+    @Override
     protected int getLayoutResourceId() {
         return R.layout.activity_profil_detail;
     }
 
     @Override
     protected void initPresenter() {
-        presenter.init(this);
+        presenter.onAttach(this);
     }
 
     @Override

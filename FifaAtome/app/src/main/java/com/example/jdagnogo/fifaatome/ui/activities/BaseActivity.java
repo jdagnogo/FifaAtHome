@@ -19,11 +19,11 @@ public abstract class BaseActivity extends Activity implements BaseContract {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutResourceId());
 
-        //init butterknife and presenter
+        //onAttach butterknife and presenter
         binder = ButterKnife.bind(this);
         presenter = setPresenter();
         initPresenter();
-        Log.d(BaseActivity.class.getSimpleName(),"---------INIT : butterKnife, presenter ------");
+        Log.d(BaseActivity.class.getSimpleName(), "---------INIT : butterKnife, presenter ------");
 
 
     }
@@ -47,8 +47,8 @@ public abstract class BaseActivity extends Activity implements BaseContract {
     protected void onDestroy() {
         super.onDestroy();
         binder.unbind();
-        presenter.onDestroy();
-        Log.d(BaseActivity.class.getSimpleName(),"---------RELEASE : butterKnife, presenter ------");
+        presenter.onDetach();
+        Log.d(BaseActivity.class.getSimpleName(), "---------RELEASE : butterKnife, presenter ------");
 
 //release butterknife, presenter, close realm ?
     }

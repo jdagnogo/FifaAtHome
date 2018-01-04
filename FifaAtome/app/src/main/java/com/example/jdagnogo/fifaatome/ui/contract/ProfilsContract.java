@@ -5,4 +5,7 @@ import android.support.v7.widget.RecyclerView;
 public interface ProfilsContract extends BaseContract {
 
     RecyclerView getRecyclerView();
+
+    void handleEmptyAdapter();
+
 }
