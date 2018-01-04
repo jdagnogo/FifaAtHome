@@ -40,6 +40,7 @@ public class ProfilsPresenter<V extends ProfilsContract> implements BasePresente
     public void onAttach(V view) {
 
         this.view = view;
+        users = new ArrayList<>();
         showLoading();
         initAdapter();
     }
@@ -55,7 +56,7 @@ public class ProfilsPresenter<V extends ProfilsContract> implements BasePresente
     }
 
     private void getLastestUserList() {
-        data = FifaAtome.getDbManager().loadUsers().subscribe(getOnNextConsomer(), getThrowableConsomer());
+        data = FifaAtome.getDbManager().loadAllUsers().subscribe(getOnNextConsomer(), getThrowableConsomer());
     }
 
     private void initAdapter() {
@@ -73,7 +74,8 @@ public class ProfilsPresenter<V extends ProfilsContract> implements BasePresente
     private Consumer<ArrayList<User>> getOnNextConsomer() {
         return users -> {
             Log.e("ProfilsPresenter :", "new data : ");
-            ProfilsPresenter.this.users = users;
+            ProfilsPresenter.this.users.clear();
+            ProfilsPresenter.this.users.addAll(users);
             hideLoading();
             if (users.size() == 0) {
                handleEmptyAdapter();

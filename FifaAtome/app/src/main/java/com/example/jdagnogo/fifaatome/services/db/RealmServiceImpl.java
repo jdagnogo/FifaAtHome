@@ -8,8 +8,11 @@ import com.example.jdagnogo.fifaatome.models.realm.UserRealm;
 import java.util.ArrayList;
 
 import io.reactivex.Flowable;
+import io.reactivex.functions.Function;
+import io.reactivex.functions.Predicate;
 import io.realm.Realm;
 import io.realm.RealmList;
+import io.realm.RealmObject;
 import io.realm.RealmResults;
 
 // we want to have realm object only here
@@ -28,36 +31,57 @@ public class RealmServiceImpl implements DbManager {
 
     @Override
     public Flowable<Boolean> saveUser(final User user) {
-        final UserRealm userRealm = new UserRealm(user);
-        realm.beginTransaction();
-        realm.copyToRealm(userRealm);
-        realm.commitTransaction();
-        return null;
-
-    }
-
-    @Override
-    public Flowable<Boolean> saveUsers(ArrayList<User> users) {
         return Flowable.fromCallable(() -> {
-            try(Realm realm = Realm.getDefaultInstance()) {
+            try (Realm realm = Realm.getDefaultInstance()) {
                 realm.executeTransaction(realm1 -> {
-                    RealmList<UserRealm> _newsList = new RealmList<>();
-                    for (User user : users){
-                        _newsList.add(new UserRealm(user));
-                    }
-                    realm1.insert(_newsList);
+                    realm1.insert(new UserRealm(user));
                 });
-            }
-            catch (Exception e){
-                Log.e("SaveUser","error : "+e.getMessage());
+            } catch (Exception e) {
+                Log.e("SaveUser", "error : " + e.getMessage());
                 return false;
             }
+            Log.e("SaveUser", "succed : " + user.toString());
             return true;
         });
     }
 
     @Override
-    public Flowable<ArrayList<User>> loadUsers() {
+    public Flowable<Boolean> saveUsers(ArrayList<User> users) {
+        return Flowable.fromCallable(() -> {
+            try (Realm realm = Realm.getDefaultInstance()) {
+                realm.executeTransaction(realm1 -> {
+                    RealmList<UserRealm> _newsList = new RealmList<>();
+                    for (User user : users) {
+                        _newsList.add(new UserRealm(user));
+                    }
+                    realm1.insert(_newsList);
+                });
+            } catch (Exception e) {
+                Log.e("SaveUsers", "error : " + e.getMessage());
+                return false;
+            }
+            Log.e("SaveUser", "succed : " + users.toString());
+            return true;
+        });
+    }
+
+
+    @Override
+    public Flowable<User> loadUserById(int id) {
+        return realm.where(UserRealm.class)
+                .equalTo(UserRealm.SPEUDO,"5")
+                .findFirst()
+                .asFlowable()
+                .map(new Function<RealmObject, User>() {
+                    @Override
+                    public User apply(RealmObject realmObject) throws Exception {
+                        return new User((UserRealm)realmObject);
+                    }
+                });
+    }
+
+    @Override
+    public Flowable<ArrayList<User>> loadAllUsers() {
         return realm.where(UserRealm.class)
                 .findAll()
                 .asFlowable()
@@ -69,13 +93,11 @@ public class RealmServiceImpl implements DbManager {
                     }
                     return users;
                 });
-
     }
 
     @Override
     public Flowable<Boolean> deleteUser(User user) {
         return null;
     }
-
 
 }

@@ -6,6 +6,8 @@ import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
 public class UserRealm extends RealmObject {
+    public final static String ID = "id";
+    public final static String SPEUDO = "pseudo";
 
     private int id;
     @PrimaryKey

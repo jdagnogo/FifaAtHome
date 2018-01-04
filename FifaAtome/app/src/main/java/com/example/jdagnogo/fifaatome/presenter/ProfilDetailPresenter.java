@@ -24,16 +24,14 @@ public class ProfilDetailPresenter<V extends ProfilsDetailContract> implements B
     }
 
     private void loadUserInfo() {
-        ArrayList<User> userRealms = new ArrayList<>();
-        for (int i =0; i<1000;i++){
-            User userRealm = new User();
-            userRealm.setPseudo(""+i);
-            userRealm.setName("TeteDeGland"+i);
-            userRealm.setFirstName("Roche");
-            userRealms.add(userRealm);
-        }
+        FifaAtome.getDbManager().loadUserById(5).subscribe(new Consumer<User>() {
+            @Override
+            public void accept(User user) throws Exception {
+                Log.e("toto",""+user.toString());
+            }
+        });
 
-       FifaAtome.getDbManager().saveUsers(userRealms).subscribe(new Consumer<Boolean>() {
+      /* FifaAtome.getDbManager().saveUsers(userRealms).subscribe(new Consumer<Boolean>() {
            @Override
            public void accept(Boolean aBoolean) throws Exception {
                if (aBoolean){
@@ -48,7 +46,7 @@ public class ProfilDetailPresenter<V extends ProfilsDetailContract> implements B
            public void accept(Throwable throwable) throws Exception {
                Log.e("ProfilsDetailPresenter", "error : "+throwable.getMessage());
            }
-       });
+       });*/
 
 
     }

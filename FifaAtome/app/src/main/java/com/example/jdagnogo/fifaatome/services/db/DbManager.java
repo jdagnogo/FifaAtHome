@@ -16,7 +16,9 @@ public interface DbManager {
 
     Flowable<Boolean> saveUsers(ArrayList<User> users);
 
-    Flowable<ArrayList<User>>loadUsers();
+    Flowable<User> loadUserById(int id);
+
+    Flowable<ArrayList<User>> loadAllUsers();
 
     Flowable<Boolean> deleteUser(User user);
 
