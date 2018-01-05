@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
@@ -22,7 +23,7 @@ public class ProfilsActivity extends BaseActivity implements ProfilsContract {
     RecyclerView recyclerView;
 
     @BindView(R.id.emptyadapter)
-    RelativeLayout emptyAdapterLayout;
+    LinearLayout emptyAdapterLayout;
 
     @BindView(R.id.loading)
     RelativeLayout loadingLayout;

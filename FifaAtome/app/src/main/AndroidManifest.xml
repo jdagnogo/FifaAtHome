@@ -19,8 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activities.ProfilsActivity"></activity>
-        <activity android:name=".ui.activities.ProfilsDetailActivity"></activity>
+        <activity android:name=".ui.activities.ProfilsActivity" />
+        <activity android:name=".ui.activities.ProfilsDetailActivity" />
+        <activity android:name=".ui.activities.CreateUserActivity"
+            android:windowSoftInputMode="stateHidden"></activity>
     </application>
 
 </manifest>

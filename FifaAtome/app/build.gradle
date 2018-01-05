@@ -30,9 +30,10 @@ android {
     }
 }
 repositories {
-    maven {url "https://clojars.org/repo/"}
+    maven { url "https://clojars.org/repo/" }
 }
 dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
 
@@ -45,9 +46,11 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //rxjava 2
     compile "io.reactivex.rxjava2:rxjava:2.1.8"
+    //circle image
+    compile 'de.hdodenhof:circleimageview:2.2.0'
 
     //icePick
-   // compile "frankiesardo:icepick:3.2.0"
+    // compile "frankiesardo:icepick:3.2.0"
     //compile "frankiesardo:icepick-processor:3.2.0"
     //compile 'org.parceler:parceler:1.1.6'
 }

@@ -4,4 +4,14 @@
     <string name="slogan">Rappel à ton pote que tu es meilleur que lui à Fifa</string>
     <string name="title_profil">Liste des profils</string>
     <string name="no_user">Aucun profil enregistré pour l\'instant</string>
+    <string name="create_user_title">Nouveau profil</string>
+    <string name="from_avatar">Parmi les avatars</string>
+    <string name="from_camera">Prendre une photo</string>
+    <string name="user_name">Nom :</string>
+    <string name="user_speudo">Pseudo :</string>
+    <string name="user_hint_name">Entrez votre nom ici</string>
+    <string name="user_hint_pseudo">Entrez votre pseudo ici</string>
+    <string name="validate">Valider</string>
+    <string name="user_firtname">Prénom :</string>
+    <string name="user_hint_firtname" >Entrez votre prénom ici</string>
 </resources>

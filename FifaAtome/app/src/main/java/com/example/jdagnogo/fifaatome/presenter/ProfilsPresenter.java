@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.example.jdagnogo.fifaatome.FifaAtome;
 import com.example.jdagnogo.fifaatome.models.entities.User;
+import com.example.jdagnogo.fifaatome.ui.activities.CreateUserActivity;
 import com.example.jdagnogo.fifaatome.ui.activities.ProfilsDetailActivity;
 import com.example.jdagnogo.fifaatome.ui.adapter.UserAdapter;
 import com.example.jdagnogo.fifaatome.ui.contract.ProfilsContract;
@@ -67,7 +68,7 @@ public class ProfilsPresenter<V extends ProfilsContract> implements BasePresente
     }
 
     public void onFabClick() {
-        Intent intent = new Intent(view.getActivity(), ProfilsDetailActivity.class);
+        Intent intent = new Intent(view.getActivity(), CreateUserActivity.class);
         view.getActivity().startActivity(intent);
     }
 
