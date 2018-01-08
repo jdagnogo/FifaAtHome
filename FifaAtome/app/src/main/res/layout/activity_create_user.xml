@@ -131,6 +131,7 @@
 
                     <EditText
                         android:layout_width="match_parent"
+                        android:id="@+id/pseudo_ed"
                         android:layout_height="wrap_content"
                         android:hint="@string/user_hint_pseudo"
                         android:theme="@style/EditTextCreateUSer" />
@@ -145,6 +146,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/firstname_ed"
                         android:hint="@string/user_hint_firtname"
                         android:theme="@style/EditTextCreateUSer" />
 
@@ -158,6 +160,7 @@
                     <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/name_ed"
                         android:hint="@string/user_hint_name"
                         android:theme="@style/EditTextCreateUSer" />
                 </LinearLayout>

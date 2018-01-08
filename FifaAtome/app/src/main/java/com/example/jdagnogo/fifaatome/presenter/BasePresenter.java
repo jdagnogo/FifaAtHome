@@ -14,6 +14,7 @@ public interface BasePresenter<V extends BaseContract> {
 
     void hideLoading();
 
+
     //show empty?
 
     //show network error?

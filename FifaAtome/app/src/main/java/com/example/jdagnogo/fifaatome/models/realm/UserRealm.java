@@ -9,7 +9,7 @@ public class UserRealm extends RealmObject {
     public final static String ID = "id";
     public final static String SPEUDO = "pseudo";
 
-    private int id;
+    private String id;
     @PrimaryKey
     private String pseudo;
     private String firstName;
@@ -32,11 +32,11 @@ public class UserRealm extends RealmObject {
         return String.format("%s %s",firstName,name);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

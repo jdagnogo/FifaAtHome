@@ -18,6 +18,8 @@ import io.realm.RealmResults;
 // we want to have realm object only here
 
 public class RealmServiceImpl implements DbManager {
+
+    //TODO clear realm with stetho
     private final Realm realm;
 
     public RealmServiceImpl(Realm realm) {

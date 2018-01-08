@@ -2,8 +2,14 @@ package com.example.jdagnogo.fifaatome.models.entities;
 
 import com.example.jdagnogo.fifaatome.models.realm.UserRealm;
 
+import javax.annotation.Nonnull;
+
+import static com.example.jdagnogo.fifaatome.utils.RealmUtils.gererateUniqueId;
+
 public class User {
-    private int id;
+    @Nonnull
+    private String id;
+    @Nonnull
     private String pseudo;
     private String firstName;
     private String name;
@@ -11,6 +17,13 @@ public class User {
     private String photo;
 
     public User() {
+    }
+
+    public User(String pseudo, String firstName, String name) {
+        this.pseudo = pseudo;
+        this.firstName = firstName;
+        this.name = name;
+        id = gererateUniqueId();
     }
 
     public User(UserRealm userRealm){
@@ -22,11 +35,11 @@ public class User {
         this.photo = userRealm.getPhoto();
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -31,7 +31,7 @@ public class ProfilDetailPresenter<V extends ProfilsDetailContract> implements B
             }
         });
 
-      /* FifaAtome.getDbManager().saveUsers(userRealms).subscribe(new Consumer<Boolean>() {
+      FifaAtome.getDbManager().saveUser(new User()).subscribe(new Consumer<Boolean>() {
            @Override
            public void accept(Boolean aBoolean) throws Exception {
                if (aBoolean){
@@ -46,7 +46,7 @@ public class ProfilDetailPresenter<V extends ProfilsDetailContract> implements B
            public void accept(Throwable throwable) throws Exception {
                Log.e("ProfilsDetailPresenter", "error : "+throwable.getMessage());
            }
-       });*/
+       });
 
 
     }
