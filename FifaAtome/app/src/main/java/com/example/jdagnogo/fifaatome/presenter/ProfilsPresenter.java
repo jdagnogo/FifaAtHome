@@ -10,6 +10,7 @@ import com.example.jdagnogo.fifaatome.ui.activities.CreateUserActivity;
 import com.example.jdagnogo.fifaatome.ui.activities.ProfilsDetailActivity;
 import com.example.jdagnogo.fifaatome.ui.adapter.UserAdapter;
 import com.example.jdagnogo.fifaatome.ui.contract.ProfilsContract;
+import com.trello.rxlifecycle2.android.RxLifecycleAndroid;
 
 import java.util.ArrayList;
 
@@ -33,8 +34,6 @@ public class ProfilsPresenter<V extends ProfilsContract> implements BasePresente
     @Override
     public void onDetach() {
         this.view = null;
-        if (!data.isDisposed())
-            data.dispose();
     }
 
     @Override
@@ -57,7 +56,10 @@ public class ProfilsPresenter<V extends ProfilsContract> implements BasePresente
     }
 
     private void getLastestUserList() {
-        data = FifaAtome.getDbManager().loadAllUsers().subscribe(getOnNextConsomer(), getThrowableConsomer());
+        data = FifaAtome.getDbManager().loadAllUsers()
+                //use rxLifecycle to handle dispose
+                .compose(RxLifecycleAndroid.bindActivity(view.getActivity().lifecycle()))
+                .subscribe(getOnNextConsomer(), getThrowableConsomer());
     }
 
     private void initAdapter() {

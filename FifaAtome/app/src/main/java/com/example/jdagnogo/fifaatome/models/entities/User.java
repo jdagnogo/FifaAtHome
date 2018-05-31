@@ -19,11 +19,12 @@ public class User {
     public User() {
     }
 
-    public User(String pseudo, String firstName, String name) {
+    public User(String pseudo, String firstName, String name,String photo) {
         this.pseudo = pseudo;
         this.firstName = firstName;
         this.name = name;
         id = gererateUniqueId();
+        this.photo = photo;
     }
 
     public User(UserRealm userRealm){

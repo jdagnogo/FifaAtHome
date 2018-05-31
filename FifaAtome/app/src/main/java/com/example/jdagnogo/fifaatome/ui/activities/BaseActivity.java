@@ -6,11 +6,12 @@ import android.util.Log;
 
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.ui.contract.BaseContract;
+import com.trello.rxlifecycle2.components.RxActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public abstract class BaseActivity extends Activity implements BaseContract {
+public abstract class BaseActivity extends RxActivity implements BaseContract {
     protected Unbinder binder;
     protected BasePresenter presenter;
 

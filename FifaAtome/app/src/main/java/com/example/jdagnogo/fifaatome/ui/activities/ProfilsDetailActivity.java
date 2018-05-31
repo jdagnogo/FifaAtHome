@@ -7,6 +7,7 @@ import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.presenter.ProfilDetailPresenter;
 import com.example.jdagnogo.fifaatome.ui.contract.ProfilsDetailContract;
+import com.trello.rxlifecycle2.components.RxActivity;
 
 import butterknife.BindView;
 
@@ -16,7 +17,7 @@ public class ProfilsDetailActivity extends BaseActivity implements ProfilsDetail
     TextView titleTextView;
 
     @Override
-    public Activity getActivity() {
+    public RxActivity getActivity() {
         return this;
     }
 

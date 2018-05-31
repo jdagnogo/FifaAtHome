@@ -11,6 +11,7 @@ import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.presenter.ProfilsPresenter;
 import com.example.jdagnogo.fifaatome.ui.contract.ProfilsContract;
+import com.trello.rxlifecycle2.components.RxActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -51,7 +52,7 @@ public class ProfilsActivity extends BaseActivity implements ProfilsContract {
     }
 
     @Override
-    public Activity getActivity() {
+    public RxActivity getActivity() {
         return this;
     }
 

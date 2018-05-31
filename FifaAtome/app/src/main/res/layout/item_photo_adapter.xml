@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/photo"
+        android:src="@drawable/no_user"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_width="32dp"
+        android:elevation="10dp"
+        android:id="@+id/selected"
+        android:background="@android:color/white"
+       android:layout_alignRight="@+id/photo"
+        android:src="@drawable/ic_check_circle_black_24dp"
+        android:tint="@color/colorAccent"
+        android:layout_height="32dp" />
+
+</RelativeLayout>

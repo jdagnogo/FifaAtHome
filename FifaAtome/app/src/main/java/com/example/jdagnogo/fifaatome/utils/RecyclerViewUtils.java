@@ -2,6 +2,7 @@ package com.example.jdagnogo.fifaatome.utils;
 
 import android.app.Activity;
 import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -15,5 +16,10 @@ public class RecyclerViewUtils {
             recyclerView.addItemDecoration(new DividerItemDecoration(activity, DividerItemDecoration.VERTICAL));
         }
 
+    }
+
+    public static void initRecyclerViewAsGrid(RecyclerView recyclerView, Activity activity,int numberOfColumns) {
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(activity, numberOfColumns));
     }
 }

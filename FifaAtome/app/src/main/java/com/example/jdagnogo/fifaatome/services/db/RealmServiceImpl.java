@@ -74,12 +74,7 @@ public class RealmServiceImpl implements DbManager {
                 .equalTo(UserRealm.SPEUDO,"5")
                 .findFirst()
                 .asFlowable()
-                .map(new Function<RealmObject, User>() {
-                    @Override
-                    public User apply(RealmObject realmObject) throws Exception {
-                        return new User((UserRealm)realmObject);
-                    }
-                });
+                .map(realmObject -> new User((UserRealm)realmObject));
     }
 
     @Override

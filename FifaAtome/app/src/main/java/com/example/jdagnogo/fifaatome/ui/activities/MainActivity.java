@@ -9,6 +9,7 @@ import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.presenter.MainPresenter;
 import com.example.jdagnogo.fifaatome.ui.contract.MainContract;
 import com.ramotion.circlemenu.CircleMenuView;
+import com.trello.rxlifecycle2.components.RxActivity;
 
 import butterknife.BindView;
 
@@ -49,7 +50,7 @@ public class MainActivity extends BaseActivity implements MainContract {
     }
 
     @Override
-    public Activity getActivity() {
+    public RxActivity getActivity() {
         return this;
     }
 

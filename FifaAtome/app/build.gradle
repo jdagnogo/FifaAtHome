@@ -49,6 +49,17 @@ dependencies {
     //circle image
     compile 'de.hdodenhof:circleimageview:2.2.0'
 
+    //rxBinding
+    compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
+    compile 'com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0'
+
+    //rxLifeCycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.2.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-android:2.2.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
+
     //icePick
     // compile "frankiesardo:icepick:3.2.0"
     //compile "frankiesardo:icepick-processor:3.2.0"

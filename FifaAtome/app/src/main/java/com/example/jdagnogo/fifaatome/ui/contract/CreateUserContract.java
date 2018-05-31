@@ -6,4 +6,6 @@ public interface CreateUserContract extends BaseContract {
     void showErrorCreatingUser();
 
     void successCreatingUser();
+
+    void changePhoto(String photo);
 }

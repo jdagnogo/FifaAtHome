@@ -12,12 +12,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.jdagnogo.fifaatome.R;
+import com.example.jdagnogo.fifaatome.models.enums.CircleMenuItemEnum;
 import com.example.jdagnogo.fifaatome.presenter.BasePresenter;
 import com.example.jdagnogo.fifaatome.presenter.CreateUserPresenter;
 import com.example.jdagnogo.fifaatome.ui.contract.CreateUserContract;
+import com.example.jdagnogo.fifaatome.utils.ImageUtils;
+import com.trello.rxlifecycle2.components.RxActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class CreateUserActivity extends BaseActivity implements CreateUserContract {
     //TODO rotation : icepick
@@ -27,9 +31,14 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
     @BindView(R.id.image_container)
     RelativeLayout imageContainer;
 
+    @BindView(R.id.avatar)
+    LinearLayout avatar;
+
+    @BindView(R.id.picture)
+    LinearLayout picture;
+
     @BindView(R.id.choose_image_option)
     LinearLayout chooseImageOption;
-
     @BindView(R.id.pseudo_ed)
     EditText pseudoEd;
 
@@ -39,10 +48,13 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
     @BindView(R.id.name_ed)
     EditText nameEd;
 
+    @BindView(R.id.profile_image)
+    CircleImageView profileImage;
+
     private CreateUserPresenter createUserPresenter;
 
     @Override
-    public Activity getActivity() {
+    public RxActivity getActivity() {
         return this;
     }
 
@@ -80,6 +92,17 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
         createUserPresenter.onPhotoClick();
     }
 
+    @OnClick(R.id.avatar)
+    void onAvatarClick() {
+        createUserPresenter.onAvatarClick();
+    }
+
+
+    @OnClick(R.id.picture)
+    void onPictureClick() {
+        createUserPresenter.onPictureClick();
+    }
+
     @OnClick(R.id.validate)
     void onValidateClick() {
         createUserPresenter.setInfoFilled(pseudoEd.getText().toString(),
@@ -105,5 +128,10 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
     @Override
     public void successCreatingUser() {
 
+    }
+
+    @Override
+    public void changePhoto(String photo) {
+        profileImage.setImageDrawable(ImageUtils.getDrawableFromName(photo));
     }
 }
