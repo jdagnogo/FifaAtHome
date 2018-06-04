@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.jdagnogo.fifaatome.ui.activities.VsActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:background="@color/background"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_height="50dp">
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:layout_centerInParent="true"
+                android:layout_height="10dp"/>
+            <ImageView
+                android:layout_width="@dimen/twice_default_image_size"
+                android:layout_centerInParent="true"
+                android:background="@drawable/circle_white"
+                android:layout_height="@dimen/twice_default_image_size" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="28sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_centerInParent="true"
+                android:text="@string/vs"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+
+            android:layout_weight="1"
+            android:layout_height="wrap_content"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"></LinearLayout>
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        style="@style/ValidateTextView"
+        android:layout_alignParentBottom="true"
+        android:text="@string/start_game"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

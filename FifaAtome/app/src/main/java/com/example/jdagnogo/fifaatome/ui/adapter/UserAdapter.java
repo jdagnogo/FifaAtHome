@@ -8,8 +8,11 @@ import android.widget.TextView;
 
 import com.example.jdagnogo.fifaatome.R;
 import com.example.jdagnogo.fifaatome.models.entities.User;
+import com.example.jdagnogo.fifaatome.utils.ImageUtils;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     ArrayList<User> users;
@@ -27,7 +30,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-        holder.getTitle().setText(users.get(position).getName());
+        holder.getPseudo().setText(users.get(position).getPseudo());
+        holder.getFullName().setText(users.get(position).getFullName());
+        holder.getPhoto().setImageDrawable(
+                ImageUtils.getProfileDrawableFromName(users.get(position).getPhoto()));
     }
 
 
@@ -37,15 +43,22 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     }
 
     public class UserViewHolder extends RecyclerView.ViewHolder {
-        private final TextView title;
+        private final TextView pseudo;
+        private final CircleImageView photo;
+        private final TextView fullName;
 
         public UserViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.pseudo);
+            pseudo = (TextView) itemView.findViewById(R.id.pseudo);
+            photo = (CircleImageView) itemView.findViewById(R.id.photo);
+            fullName = (TextView) itemView.findViewById(R.id.fullName);
         }
-
-        public TextView getTitle() {
-            return title;
+        public TextView getFullName() {
+            return fullName;
         }
+        public TextView getPseudo() {
+            return pseudo;
+        }
+        public CircleImageView getPhoto(){return photo;}
     }
 }

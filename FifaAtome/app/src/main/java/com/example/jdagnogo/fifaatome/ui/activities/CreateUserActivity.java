@@ -1,6 +1,7 @@
 package com.example.jdagnogo.fifaatome.ui.activities;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
@@ -60,13 +61,13 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
 
     @Override
     public void showLoading() {
-        //photo
+        //nothing
 
     }
 
     @Override
     public void hideLoading() {
-
+        //nothing
     }
 
     @Override
@@ -77,7 +78,6 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
     @Override
     protected void initPresenter() {
         presenter.onAttach(this);
-
     }
 
     @Override
@@ -132,6 +132,6 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
 
     @Override
     public void changePhoto(String photo) {
-        profileImage.setImageDrawable(ImageUtils.getDrawableFromName(photo));
+        profileImage.setImageDrawable(ImageUtils.getProfileDrawableFromName(photo));
     }
 }

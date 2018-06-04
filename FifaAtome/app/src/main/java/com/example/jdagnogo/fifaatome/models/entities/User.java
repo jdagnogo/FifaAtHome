@@ -35,6 +35,9 @@ public class User {
         this.password = userRealm.getPassword();
         this.photo = userRealm.getPhoto();
     }
+    public String getFullName(){
+        return String.format("%s %s",firstName, name);
+    }
 
     public String getId() {
         return id;

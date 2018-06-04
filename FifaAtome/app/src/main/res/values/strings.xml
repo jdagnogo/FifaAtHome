@@ -13,8 +13,10 @@
     <string name="user_hint_pseudo">Entrez votre pseudo ici</string>
     <string name="validate">Valider</string>
     <string name="user_firtname">Prénom :</string>
-    <string name="user_hint_firtname" >Entrez votre prénom ici</string>
+    <string name="user_hint_firtname">Entrez votre prénom ici</string>
     <string name="avatar_dialog_title">Sélectionner un avatar</string>
     <string name="cancel">Annuler</string>
     <string name="missing_info">Il manque des informations</string>
+    <string name="start_game">Débuter le match</string>
+    <string name="vs">VS</string>
 </resources>

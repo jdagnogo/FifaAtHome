@@ -52,6 +52,7 @@ public class CreateUserPresenter<V extends CreateUserContract> implements BasePr
     public void onAttach(V view) {
         this.view = view;
         user = new User();
+        user.setPhoto(currentPhoto);
     }
 
     @Override
@@ -89,8 +90,11 @@ public class CreateUserPresenter<V extends CreateUserContract> implements BasePr
     }
 
     private void saveUser() {
-        if (checkIfEverythingOk())
-        data = FifaAtome.getDbManager().saveUser(user).subscribe(getConsumer(), getThrowableConsomer());
+        if (checkIfEverythingOk()){
+            data = FifaAtome.getDbManager().saveUser(user).subscribe(getConsumer(), getThrowableConsomer());
+            view.getActivity().finish();
+        }
+
     }
 private boolean checkIfEverythingOk(){
         if (StringUtils.isStringNotEmpty(user.getFirstName())

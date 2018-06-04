@@ -5,14 +5,13 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.example.jdagnogo.fifaatome.ui.activities.ProfilsActivity;
+import com.example.jdagnogo.fifaatome.ui.activities.VsActivity;
 
 public enum CircleMenuItemEnum {
     //the order is very important
     PROFIL(){
         public void handleClick(Activity activity) {
-            Log.d("CircleMenuItemEnum","PROFIL");
-            Intent intent = new Intent(activity, ProfilsActivity.class);
-            activity.startActivity(intent);
+            launchActicity(activity, ProfilsActivity.class);
         }
     },
     SETTINGS(){
@@ -22,7 +21,7 @@ public enum CircleMenuItemEnum {
     },
     VS(){
         public void handleClick(Activity activity) {
-            Log.d("CircleMenuItemEnum","VS");
+            launchActicity(activity, VsActivity.class);
         }
     },
     TOURNAMENT(){
@@ -37,5 +36,10 @@ public enum CircleMenuItemEnum {
     };
 
     public abstract void handleClick(Activity activity);
+
+    private static void launchActicity(Activity activity,Class c){
+        Intent intent = new Intent(activity,c);
+        activity.startActivity(intent);
+    }
 
 }

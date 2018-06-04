@@ -30,7 +30,7 @@ public class PhotoAdapter extends RecyclerView.Adapter<PhotoAdapter.PhotoViewHol
 
     @Override
     public void onBindViewHolder(PhotoViewHolder holder, int position) {
-        holder.getPhoto().setImageDrawable(ImageUtils.getDrawableFromName(photos.get(position)));
+        holder.getPhoto().setImageDrawable(ImageUtils.getProfileDrawableFromName(photos.get(position)));
         if (photoSelected.equals(photos.get(position))) {
             holder.getSelected().setVisibility(View.VISIBLE);
         } else {
