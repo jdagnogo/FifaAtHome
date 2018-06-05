@@ -65,9 +65,7 @@ public class CreateUserPresenter<V extends CreateUserContract> implements BasePr
 
     }
 
-    public void onPhotoClick() {
-        view.hideOrShowAvatarOptions();
-    }
+
 
     public void onAvatarClick() {
         // load all pictures

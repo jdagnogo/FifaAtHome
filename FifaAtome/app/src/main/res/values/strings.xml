@@ -19,4 +19,6 @@
     <string name="missing_info">Il manque des informations</string>
     <string name="start_game">Débuter le match</string>
     <string name="vs">VS</string>
+    <string name="team">Equipe :</string>
+    <string name="player">Joueur :</string>
 </resources>

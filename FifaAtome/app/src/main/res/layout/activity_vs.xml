@@ -1,59 +1,346 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.example.jdagnogo.fifaatome.ui.activities.VsActivity">
+    android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/background"
-        android:layout_height="wrap_content">
+        android:background="@color/background">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+            android:layout_centerInParent="true">
+
             <View
                 android:layout_width="match_parent"
-                android:background="@color/colorPrimaryDark"
+                android:layout_height="5dp"
                 android:layout_centerInParent="true"
-                android:layout_height="10dp"/>
+                android:background="@color/colorPrimaryDark" />
+
             <ImageView
                 android:layout_width="@dimen/twice_default_image_size"
+                android:layout_height="@dimen/twice_default_image_size"
                 android:layout_centerInParent="true"
-                android:background="@drawable/circle_white"
-                android:layout_height="@dimen/twice_default_image_size" />
+                android:background="@drawable/circle_white" />
+
             <TextView
                 android:layout_width="wrap_content"
-                android:textSize="28sp"
-                android:textColor="@color/colorPrimaryDark"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/vs"
-                android:layout_height="wrap_content" />
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="28sp" />
         </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
 
-            android:layout_weight="1"
-            android:layout_height="wrap_content"></LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"></LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="5dp"
+                        android:layout_gravity="bottom"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginLeft="@dimen/default_margin"
+                            android:src="@drawable/ic_pele"
+                            app:civ_border_color="@color/colorAccentLight"
+                            app:civ_border_width="2dp"
+                            app:civ_circle_background_color="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/player"
+                                    android:textColor="@color/colorPrimary" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/default_margin"
+                                android:layout_weight="1"
+                                android:text="Pele"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/default_text_title_18" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/default_margin"
+                        android:layout_marginRight="@dimen/default_margin"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/default_margin"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/team"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Arsenal"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/default_text_title_18" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/arsenal" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginLeft="@dimen/default_margin"
+                            android:src="@drawable/ic_boy"
+                            app:civ_border_color="@color/colorAccentLight"
+                            app:civ_border_width="2dp"
+                            app:civ_circle_background_color="@android:color/white" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/player"
+                                    android:textColor="@color/colorPrimary" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/default_margin"
+                                android:layout_weight="1"
+                                android:text="Boy"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/default_text_title_18" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/default_margin"
+                        android:layout_marginRight="@dimen/default_margin"
+                        android:layout_marginTop="@dimen/default_margin"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/default_margin"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/team"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_mode_edit_black_24dp" />
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Real Madrid"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="@dimen/default_text_title_18" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/real" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <View
+                        android:layout_width="100dp"
+                        android:layout_height="5dp"
+                        android:layout_gravity="top"
+                        android:background="@color/colorPrimaryDark" />
+
+                    <View
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
 
     </RelativeLayout>
 
 
     <TextView
-        android:layout_width="match_parent"
         style="@style/ValidateTextView"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/start_game"
-        android:layout_height="wrap_content" />
+        android:text="@string/start_game" />
 
 </LinearLayout>

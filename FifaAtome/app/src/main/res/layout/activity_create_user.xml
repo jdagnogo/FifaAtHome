@@ -43,12 +43,6 @@
                     app:civ_border_width="4dp"
                     app:civ_circle_background_color="@android:color/white" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_alignBottom="@+id/profile_image"
-                    android:layout_alignRight="@+id/profile_image"
-                    android:src="@drawable/ic_mode_edit_black_24dp" />
             </RelativeLayout>
 
             <LinearLayout

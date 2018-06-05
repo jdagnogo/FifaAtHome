@@ -87,10 +87,6 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
         return presenter;
     }
 
-    @OnClick(R.id.image_container)
-    void onImageClick() {
-        createUserPresenter.onPhotoClick();
-    }
 
     @OnClick(R.id.avatar)
     void onAvatarClick() {
@@ -111,14 +107,6 @@ public class CreateUserActivity extends BaseActivity implements CreateUserContra
         createUserPresenter.onValidateClick();
     }
 
-    @Override
-    public void hideOrShowAvatarOptions() {
-        if (chooseImageOption.isShown()) {
-            chooseImageOption.setVisibility(View.GONE);
-        } else {
-            chooseImageOption.setVisibility(View.VISIBLE);
-        }
-    }
 
     @Override
     public void showErrorCreatingUser() {
