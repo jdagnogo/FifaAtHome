@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/background">
+        android:background="#52b34f">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="5dp"
                 android:layout_centerInParent="true"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@android:color/white" />
 
             <ImageView
                 android:layout_width="@dimen/twice_default_image_size"
@@ -57,18 +57,18 @@
                     <View
                         android:layout_width="5dp"
                         android:layout_height="match_parent"
-                        android:background="@color/colorPrimaryDark" />
+                        android:background="@android:color/white" />
 
                     <View
                         android:layout_width="100dp"
                         android:layout_height="5dp"
                         android:layout_gravity="bottom"
-                        android:background="@color/colorPrimaryDark" />
+                        android:background="@android:color/white" />
 
                     <View
                         android:layout_width="5dp"
                         android:layout_height="match_parent"
-                        android:background="@color/colorPrimaryDark" />
+                        android:background="@android:color/white" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -113,17 +113,18 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/player"
+                                    android:textStyle="bold"
                                     android:textColor="@color/colorPrimary" />
 
                             </LinearLayout>
 
                             <TextView
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="@dimen/default_margin"
                                 android:layout_weight="1"
                                 android:text="Pele"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="@android:color/white"
                                 android:textSize="@dimen/default_text_title_18" />
 
                         </LinearLayout>
@@ -155,6 +156,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/team"
+                                    android:textStyle="bold"
                                     android:textColor="@color/colorPrimary" />
 
                                 <ImageView
@@ -170,7 +172,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Arsenal"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="@android:color/white"
                                 android:textSize="@dimen/default_text_title_18" />
 
                         </LinearLayout>
@@ -233,6 +235,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/player"
+                                    android:textStyle="bold"
                                     android:textColor="@color/colorPrimary" />
 
                             </LinearLayout>
@@ -243,7 +246,7 @@
                                 android:layout_marginLeft="@dimen/default_margin"
                                 android:layout_weight="1"
                                 android:text="Boy"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="@android:color/white"
                                 android:textSize="@dimen/default_text_title_18" />
 
 
@@ -276,6 +279,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="@string/team"
+                                    android:textStyle="bold"
                                     android:textColor="@color/colorPrimary" />
 
                                 <ImageView
@@ -291,7 +295,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Real Madrid"
-                                android:textColor="@color/colorAccent"
+                                android:textColor="@android:color/white"
                                 android:textSize="@dimen/default_text_title_18" />
 
                         </LinearLayout>
@@ -315,18 +319,18 @@
                     <View
                         android:layout_width="5dp"
                         android:layout_height="match_parent"
-                        android:background="@color/colorPrimaryDark" />
+                        android:background="@android:color/white" />
 
                     <View
                         android:layout_width="100dp"
                         android:layout_height="5dp"
                         android:layout_gravity="top"
-                        android:background="@color/colorPrimaryDark" />
+                        android:background="@android:color/white" />
 
                     <View
                         android:layout_width="5dp"
                         android:layout_height="match_parent"
-                        android:background="@color/colorPrimaryDark" />
+                        android:background="@android:color/white" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -337,7 +341,7 @@
 
     <TextView
         style="@style/ValidateTextView"
-
+android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
